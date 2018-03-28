@@ -1,0 +1,1 @@
+web: gunicorn biai.wsgi --log-file -
