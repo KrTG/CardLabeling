@@ -25,7 +25,11 @@ SECRET_KEY = '%*woid7a0g5m%6%(t@xn_lmq2uu-))p@uwfonzj7n*m&f77-z&'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    'mighty-bayou-51824.herokuapp.com',
+    'localhost',
+    '127.0.0.1',
+]
 
 
 # Application definition
