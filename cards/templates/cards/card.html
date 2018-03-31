@@ -6,24 +6,24 @@
         <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
     </head>
     <body>
-        <img src="{% static path %}"/>
+        <img src="{% static path %}" height=400 width=400/>
         <form target="{% url 'card' card_id %}" method="post">
         <input type="radio" name="color" value="kier" id="kier" checked>
         <label for="kier">
-                <img src="{% static 'images/kier.png' %}" alt="kier" height="100" width="100"/>
+                <img src="{% static 'images/kier.png' %}" alt="kier" height="120" width="120"/>
         </label>    
         <input type="radio" name="color" value="karo" id="karo">
         <label for="karo">
-                <img src="{% static 'images/karo.png' %}" alt="karo" height="100" width="100"/>
+                <img src="{% static 'images/karo.png' %}" alt="karo" height="120" width="120"/>
         </label>    
         <br>
         <input type="radio" name="color" value="pik" id="pik">
         <label for="pik">
-                <img src="{% static 'images/pik.png' %}" alt="pik" height="100" width="100"/>
+                <img src="{% static 'images/pik.png' %}" alt="pik" height="120" width="120"/>
         </label> 
         <input type="radio" name="color" value="trefl" id="trefl">
         <label for="trefl">
-                <img src="{% static 'images/trefl2.png' %}" alt="trefl" height="100" width="100"/>
+                <img src="{% static 'images/trefl2.png' %}" alt="trefl" height="120" width="120"/>
         </label> 
         <br>
         <br>
