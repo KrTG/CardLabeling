@@ -16,7 +16,7 @@ def index(request):
 
 def done(request):
     cards = Card.objects.all()
-    list = [(card.id, card.color, card.rank) for card in cards]
+    list = [(card.num, card.color, card.rank) for card in cards]
     return HttpResponse(json.dumps(list))
 
 def card(request, card_num):
