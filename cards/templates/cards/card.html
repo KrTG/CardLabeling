@@ -6,59 +6,66 @@
         <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
     </head>
     <body>
-        <img src="{% static path %}" height=400 width=400/>
-        <form target="{% url 'card' card_id %}" method="post">
-        <input type="radio" name="color" value="kier" id="kier" checked>
-        <label for="kier">
-                <img src="{% static 'images/kier.png' %}" alt="kier" height="120" width="120"/>
-        </label>    
-        <input type="radio" name="color" value="karo" id="karo">
-        <label for="karo">
-                <img src="{% static 'images/karo.png' %}" alt="karo" height="120" width="120"/>
-        </label>    
-        <br>
-        <input type="radio" name="color" value="pik" id="pik">
-        <label for="pik">
-                <img src="{% static 'images/pik.png' %}" alt="pik" height="120" width="120"/>
-        </label> 
-        <input type="radio" name="color" value="trefl" id="trefl">
-        <label for="trefl">
-                <img src="{% static 'images/trefl2.png' %}" alt="trefl" height="120" width="120"/>
-        </label> 
-        <br>
-        <br>
-        <br>
-        <br>
-        <input type="radio" name="rank" value ="2" id= "2" checked>
-        <label for="2"><span class="rank">2</span></label>
-        <input type="radio" name="rank" value ="3" id= "3">
-        <label for="3"><span class="rank">3</span></label>
-        <input type="radio" name="rank" value ="4" id= "4">
-        <label for="4"><span class="rank">4</span></label>
-        <input type="radio" name="rank" value ="5" id= "5">
-        <label for="5"><span class="rank">5</span></label>
-        <br>
-        <input type="radio" name="rank" value ="6" id= "6">
-        <label for="6"><span class="rank">6</span></label>
-        <input type="radio" name="rank" value ="7" id= "7">
-        <label for="7"><span class="rank">7</span></label>
-        <input type="radio" name="rank" value ="8" id= "8">
-        <label for="8"><span class="rank">8</span></label>
-        <input type="radio" name="rank" value ="9" id= "9">
-        <label for="9"><span class="rank">9</span></label>
-        <br>
-        <input type="radio" name="rank" value ="10" id= "10">
-        <label for="10"><span class="rank">10</span></label>
-        <input type="radio" name="rank" value ="J" id= "J">
-        <label for="J"><span class="rank">J</span></label>
-        <input type="radio" name="rank" value ="Q" id="Q">
-        <label for="Q"><span class="rank">Q</span></label>
-        <input type="radio" name="rank" value ="K" id="K">
-        <label for="K"><span class="rank">K</span></label>
-        <input type="radio" name="rank" value ="A" id="A">
-        <label for="A"><span class="rank">A</span></label>
-        <br>
-        <input type="submit" value="Send" class="confirm">
+        <img src="{% static path %}" height=300 width=300/>
+        <form action="{% url 'card' card_num %}" method="post">
+            {% csrf_token %}
+            <input type="hidden" name="trash" value="true">
+            <input type="image" name="submit"
+                src="{% static 'images/trash.png' %}" alt="Submit"
+                height="120" width="120"
+            />
+        </form>
+        <form action="{% url 'card' card_num %}" method="post">
+            {% csrf_token %}
+            <input type="radio" name="color" value="kier" id="kier" checked>
+            <label for="kier">
+                    <img src="{% static 'images/kier.png' %}" alt="kier" height="120" width="120"/>
+            </label>    
+            <input type="radio" name="color" value="karo" id="karo">
+            <label for="karo">
+                    <img src="{% static 'images/karo.png' %}" alt="karo" height="120" width="120"/>
+            </label>    
+            <input type="radio" name="color" value="pik" id="pik">
+            <label for="pik">
+                    <img src="{% static 'images/pik.png' %}" alt="pik" height="120" width="120"/>
+            </label> 
+            <input type="radio" name="color" value="trefl" id="trefl">
+            <label for="trefl">
+                    <img src="{% static 'images/trefl.png' %}" alt="trefl" height="120" width="120"/>
+            </label> 
+            <br>
+            <br>
+            <br>
+            <br>
+            <input type="radio" name="rank" value ="2" id= "2" checked>
+            <label for="2"><span class="rank">2</span></label>
+            <input type="radio" name="rank" value ="3" id= "3">
+            <label for="3"><span class="rank">3</span></label>
+            <input type="radio" name="rank" value ="4" id= "4">
+            <label for="4"><span class="rank">4</span></label>
+            <input type="radio" name="rank" value ="5" id= "5">
+            <label for="5"><span class="rank">5</span></label>
+            <input type="radio" name="rank" value ="6" id= "6">
+            <label for="6"><span class="rank">6</span></label>
+            <input type="radio" name="rank" value ="7" id= "7">
+            <label for="7"><span class="rank">7</span></label>
+            <input type="radio" name="rank" value ="8" id= "8">
+            <label for="8"><span class="rank">8</span></label>
+            <input type="radio" name="rank" value ="9" id= "9">
+            <label for="9"><span class="rank">9</span></label>
+            <br>
+            <input type="radio" name="rank" value ="10" id= "10">
+            <label for="10"><span class="rank">10</span></label>
+            <input type="radio" name="rank" value ="J" id= "J">
+            <label for="J"><span class="rank">J</span></label>
+            <input type="radio" name="rank" value ="Q" id="Q">
+            <label for="Q"><span class="rank">Q</span></label>
+            <input type="radio" name="rank" value ="K" id="K">
+            <label for="K"><span class="rank">K</span></label>
+            <input type="radio" name="rank" value ="A" id="A">
+            <label for="A"><span class="rank">A</span></label>
+            <br>
+            <input type="submit" value="Send" class="confirm">
         </form>
     </body>
 </html>

@@ -1,9 +1,10 @@
 from django.db import models
 
 class Card(models.Model):
-    color = models.CharField(max_length=20, default="")
-    rank = models.CharField(max_length=1, default="")
+    num = models.IntegerField()
+    color = models.CharField(max_length=20, default="", blank=True)
+    rank = models.CharField(max_length=1, default="", blank=True)
 
     def __str__(self):
-        return "{} of {}".format(self.rank, self.color)        
+        return "Card nr. {}: {}, {}".format(self.num, self.rank, self.color)        
         
