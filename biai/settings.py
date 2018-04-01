@@ -27,6 +27,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = [
     'mighty-bayou-51824.herokuapp.com',
+    'karty-biai.herokuapp.com',
     'localhost',
     '127.0.0.1',
 ]
