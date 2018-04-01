@@ -22,7 +22,7 @@ def done(request):
 def card(request, card_num):
     if request.method == 'GET':
         try:
-            card = Card.objects.get(card_num=card_num)
+            card = Card.objects.get(num=card_num)
         except Card.DoesNotExist:
             raise Http404("Card does not exist")
         
