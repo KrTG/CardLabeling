@@ -7,3 +7,7 @@ def fetch_unidentified():
     else:
         return None
 
+def populate_db():
+    for i in range(1, 1197):
+        c = Card(i)
+        c.save()
