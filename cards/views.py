@@ -43,8 +43,7 @@ def card(request, card_num):
             color = request.POST.get('color', None)
             rank = request.POST.get('rank', None)
             if trash == 'true':
-                card.color = 'not_card'
-                card.rank = 'not_card'        
+                card.color = 'not_card'    
                 card.save()
             elif color and rank:
                 card.color = color
