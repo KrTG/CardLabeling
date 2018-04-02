@@ -28,9 +28,11 @@ def card(request, card_num):
         
         image_path = 'training_data/' + str(card_num) + '.png'
 
-        if card.color != '':            
+        if card.color != '':       
+            next_num = card_num + 1     
             return render(request, 'cards/card_done.html', 
-            {'identified_card': str(card), 'path': image_path })  
+            {'identified_card': str(card), 'path': image_path,
+            'next': next_num })  
 
         
         return render(request, 'cards/card.html',

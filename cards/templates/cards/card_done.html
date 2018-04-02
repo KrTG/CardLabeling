@@ -8,8 +8,11 @@
     <body>
         <img src="{% static path %}" height=300 width=300/>
         <h1>{{ identified_card }}</h1>
-        <form action="{% url 'index' %}" method="get">
+        <form action="{% url 'card' card_num=next %}" method="get">
             <input type="submit" value="Next">
+        </form>
+        <form action="{% url 'index' %}" method="get">
+            <input type="submit" value="Next unidentified">
         </form>
     </body>
 </html>
