@@ -9,5 +9,5 @@ def fetch_unidentified():
 
 def populate_db():
     for i in range(1, 1197):
-        c = Card(i)
+        c = Card(num=i)
         c.save()
