@@ -1,9 +1,8 @@
-from django.shortcuts import render, redirect
-
-from django.http import Http404, HttpResponse
-
 from .models import Card
-from .helpers import fetch_unidentified
+from .helpers import fetch_unidentified, populate_db
+
+from django.shortcuts import render, redirect
+from django.http import Http404, HttpResponse
 
 import json
 
@@ -18,6 +17,18 @@ def done(request):
     cards = Card.objects.all()
     list = [(card.num, card.color, card.rank) for card in cards]
     return HttpResponse(json.dumps(list))
+
+def reset(request):
+    if request.method == 'GET':
+        return render(request, 'reset.html')
+    elif request.method == 'POST':
+        confirmation_text = request.POST.get('confirmation')
+        print(confirmation_text)
+        if confirmation_text.upper() == "RESET":
+            populate_db()
+            return HttpResponse("reset")
+        else:
+            return HttpResponse("not reset")
 
 def card(request, card_num):
     if request.method == 'GET':

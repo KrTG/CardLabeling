@@ -8,6 +8,7 @@ def fetch_unidentified():
         return None
 
 def populate_db():
+    Card.objects.all().delete()
     for i in range(1, 1197):
         c = Card(num=i)
         c.save()
