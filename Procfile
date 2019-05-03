@@ -1,1 +1,1 @@
-web: gunicorn biai.wsgi --log-file -
+web: gunicorn labeling.wsgi --log-file -

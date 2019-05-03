@@ -78,16 +78,21 @@ docs/_build/
 # PyBuilder
 target/
 
-
 ### Django ###
 *.log
 *.pot
 *.pyc
 __pycache__/
+.env
+db.sqlite3
 local_settings.py
 
+#root 
 staticfiles/*
 !staticfiles/blank
 
-.env
-db.sqlite3
+# package
+labeling/__pycache__/
+
+# cards app
+cards/__pycache__/
