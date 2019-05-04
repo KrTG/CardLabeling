@@ -4,7 +4,12 @@ PokerHandDetection project. I've since found better way to gather the data so it
 like this.
 
 # Installation
-Install pipenv
+## python
+
+Anaconda distribution: https://www.anaconda.com/distribution/
+Vanilla Python distribution: https://www.python.org/downloads/
+
+## pipenv
 C: > pip install pipenv
 
 Install dependencies from Pipfile
